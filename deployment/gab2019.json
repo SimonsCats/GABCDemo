@@ -4,16 +4,16 @@
     "parameters": {},
     "variables": {
         "suffix": "[uniqueString(resourceGroup().id, resourceGroup().location)]",
-        "storageName": "[concat('stg', variables('suffix'))]"
+        "stName": "[concat('stg', variables('suffix'))]"
     },
     "resources": [
         {
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2018-07-01",
-            "name": "[variables('storageName')]",
+            "name": "[variables('stName')]",
             "location": "[resourceGroup().location]",
             "tags": {
-                "displayName": "[variables('storageName')]"
+                "displayName": "[variables('stName')]"
             },
             "sku": {
                 "name": "Standard_LRS"
