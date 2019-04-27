@@ -56,11 +56,11 @@
                     "name": "connectionstrings",
                     "dependsOn": [
                         "[resourceId('Microsoft.Web/sites', parameters('webAppName'))]",
-                        "[resourceId('Microsoft.Storage/storageAccounts', variables('storageName'))]"
+                        "[resourceId('Microsoft.Storage/storageAccounts', variables('stName'))]"
                     ],
                     "properties": {
                         "ApplicationStorage": {
-                            "value": "[Concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageName')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value)]",
+                            "value": "[Concat('DefaultEndpointsProtocol=https;AccountName=', variables('stName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('stName')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value)]",
                             "type": "Custom"
                         }
                     }
